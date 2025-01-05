@@ -56,10 +56,7 @@ class Game:
             self.checkEndCondition()
     def checkEndCondition(self):
         answer = input("Continue game y/n: ")
-        if answer == 'y':
-            GameRound(self.participant, self.secondParticipant)
-            self.checkEndCondition()
-        else:
+        if answer != 'y':
             print("Game ended, {p1name} has {p1points}, and {p2name} had {p2points}".format(p1name=self.participant.name, p1points=self.participant.points, p2name=self.secondParticipant.name, p2points=self.secondParticipant.points))
             self.determineWinner()
             self.endGame = True
